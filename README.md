@@ -3,19 +3,19 @@ Oversikt over temaene:
 1: Grunnleggende begreper og teknikker
 
 
-. 1.1 Algoritmer og effektvivitet
+- 1.1 Algoritmer og effektvivitet
 
-. 1.2 Nest største tall
+- 1.2 Nest største tall
 
-. 1.3 Ordnede tabeller
+- 1.3 Ordnede tabeller
 
-. 1.4 Generiske algoritmer
+- 1.4 Generiske algoritmer
 
-. 1.5 Rekursjon
+- 1.5 Rekursjon
 
-. 1.6 Multidimensjonelle tabeller
+- 1.6 Multidimensjonelle tabeller
 
-. 1.8 Algoritmeanalyse
+- 1.8 Algoritmeanalyse
 
 
 
