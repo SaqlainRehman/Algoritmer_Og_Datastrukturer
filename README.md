@@ -1,9 +1,7 @@
 Oversikt over temaene:
 
-1: Grunnleggende begreper og teknikker 
-
+1: Grunnleggende begreper og teknikker
 1.1 Algoritmer og effektvivitet
-
 1.2 Nest største tall
 1.3 Ordnede tabeller
 1.4 Generiske algoritmer
