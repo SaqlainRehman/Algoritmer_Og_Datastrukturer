@@ -27,42 +27,26 @@ Oversikt over temaene:
 - 4.4 Prioritetskø
 
 
-
-
 5: Binære trær
 
-
-. 5.1 Generelle binære trær
-
-. 5.2 Binære søketrær
-
-. 5.3 Minimums og makstrær
-
-. 5.4 Huffmantrær
-
-
+- 5.1 Generelle binære trær
+- 5.2 Binære søketrær
+- 5.3 Minimums og makstrær
+- 5.4 Huffmantrær
 
 
 6: Hashing og hashingteknikker
 
-
-. 6.1 Hashing
-
-
+- 6.1 Hashing
 
 
 9: Balanserte binærtrær
 
-
-. 9.2 Rød-svart og 2-3-4 trær
-
-
+- 9.2 Rød-svart og 2-3-4 trær
 
 
 11: Grafer
 
-
-. 11.1 Datastrukturer for grafer
-
-. 11.2 Korteste vei i graf
+- 11.1 Datastrukturer for grafer
+- 11.2 Korteste vei i graf
 
