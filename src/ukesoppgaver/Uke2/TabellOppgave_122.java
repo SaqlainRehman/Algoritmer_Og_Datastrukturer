@@ -3,9 +3,9 @@ package ukesoppgaver.Uke2;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Tabell {
+public class TabellOppgave_122 {
 
-    private Tabell() {}
+    private TabellOppgave_122() {}
 
     public static void bytt(int[] a, int i, int j)
     {
