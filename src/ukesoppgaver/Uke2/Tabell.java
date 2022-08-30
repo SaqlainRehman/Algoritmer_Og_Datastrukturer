@@ -3,9 +3,9 @@ package ukesoppgaver.Uke2;
 import java.util.Arrays;
 import java.util.Random;
 
-public class TabellOppgave_122 {
+public class Tabell {
 
-    private TabellOppgave_122() {}
+    private Tabell() {}
 
     public static void bytt(int[] a, int i, int j)
     {
@@ -41,10 +41,7 @@ public class TabellOppgave_122 {
 
     public static int maks(int[] a, int fra, int til)
     {
-        if (fra < 0 || til > a.length || fra >= til)
-        {
-            throw new IllegalArgumentException("Illegalt intervall!");
-        }
+        fratilKontroll(a.length,fra,til);
 
         int m = fra;              // indeks til største verdi i a[fra:til>
         int maksverdi = a[fra];   // største verdi i a[fra:til>
@@ -112,19 +109,51 @@ public class TabellOppgave_122 {
         skrivln(a,0,a.length);
     }
 
+    public static void fratilKontroll(int tablengde, int fra, int til) {
+        if (fra < 0)                                  // fra er negativ
+            throw new ArrayIndexOutOfBoundsException
+                    ("fra(" + fra + ") er negativ!");
+
+        if (til > tablengde)                          // til er utenfor tabellen
+            throw new ArrayIndexOutOfBoundsException
+                    ("til(" + til + ") > tablengde(" + tablengde + ")");
+
+        if (fra > til)                                // fra er større enn til
+            throw new IllegalArgumentException
+                    ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
+    }
+
+    public static void vhKontroll(int tablengde, int v, int h) {
+        if (v < 0)
+            throw new ArrayIndexOutOfBoundsException("v(" + v + ") < 0");
+
+        if (h >= tablengde)
+            throw new ArrayIndexOutOfBoundsException
+                    ("h(" + h + ") >= tablengde(" + tablengde + ")");
+
+        if (v > h + 1)
+            throw new IllegalArgumentException
+                    ("v = " + v + ", h = " + h);
+    }
 
 
-    public static void main(String ... args){      // hovedprogram
-
-        int[] a = {1,2,3,4,5,6,7,8,9};
-        skriv(a);
-        skrivln(a);
-        skriv(a,0,a.length);
-        skrivln(a,0,a.length);
 
 
+        public static void main(String[]  args){      // hovedprogram
 
+            int[] a = Tabell.randPerm(20);              // en tilfeldig tabell
+            for (int k : a) System.out.print(k + " ");  // skriver ut a
+
+            int m = Tabell.maks(a);   // finner posisjonen til største verdi
+
+
+            System.out.println("\nStørste verdi ligger på plass " + m);
 
     } // main
+
+
+
+
+
 
 }
