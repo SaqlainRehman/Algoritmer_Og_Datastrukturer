@@ -43,7 +43,7 @@ public class Tabell {
     {
         fratilKontroll(a.length,fra,til);
 
-        int m = fra;              // indeks til største verdi i a[fra:til>
+        int m = til;              // indeks til største verdi i a[fra:til>
         int maksverdi = a[fra];   // største verdi i a[fra:til>
 
         for (int i = fra + 1; i < til; i++)
