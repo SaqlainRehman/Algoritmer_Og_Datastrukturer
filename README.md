@@ -2,6 +2,7 @@ Oversikt over temaene:
 
 1: Grunnleggende begreper og teknikker
 
+
 1.1 Algoritmer og effektvivitet
 
 1.2 Nest største tall
@@ -17,7 +18,9 @@ Oversikt over temaene:
 1.8 Algoritmeanalyse
 
 
+
 3: Lineære datastrukturer
+
 
 3.1 En beholder
 
@@ -27,7 +30,9 @@ Oversikt over temaene:
 
 
 
+
 4: Stakker og køer
+
 
 4.1 En stakk
 
@@ -39,7 +44,9 @@ Oversikt over temaene:
 
 
 
+
 5: Binære trær
+
 
 5.1 Generelle binære trær
 
@@ -51,19 +58,25 @@ Oversikt over temaene:
 
 
 
+
 6: Hashing og hashingteknikker
+
 
 6.1 Hashing
 
 
 
+
 9: Balanserte binærtrær
+
 
 9.2 Rød-svart og 2-3-4 trær
 
 
 
+
 11: Grafer
+
 
 11.1 Datastrukturer for grafer
 
