@@ -1,6 +1,9 @@
 package ukesoppgaver.Uke2;
 
+import org.w3c.dom.ranges.RangeException;
+
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 public class Tabell {
@@ -41,7 +44,14 @@ public class Tabell {
 
     public static int maks(int[] a, int fra, int til)
     {
+        lengdeKontroll(a);
         fratilKontroll(a.length,fra,til);
+
+        if (fra == til) {
+            throw new NoSuchElementException
+                    ("fra(" + fra + ") = til(" + til + ") - tomt tabellintervall!");
+        }
+
 
         int m = fra;              // indeks til største verdi i a[fra:til>
         int maksverdi = a[fra];   // største verdi i a[fra:til>
@@ -136,18 +146,28 @@ public class Tabell {
                     ("v = " + v + ", h = " + h);
     }
 
+    public static void lengdeKontroll(int[] a){
+        if (a.length == 0){
+            throw new IllegalArgumentException("Lengden på tabellen er null");
+        }
+    }
+
 
 
 
         public static void main(String[]  args){      // hovedprogram
-
+        /*
             int[] a = Tabell.randPerm(20);              // en tilfeldig tabell
             for (int k : a) System.out.print(k + " ");  // skriver ut a
 
             int m = Tabell.maks(a);   // finner posisjonen til største verdi
 
-
             System.out.println("\nStørste verdi ligger på plass " + m);
+
+         */
+
+            int[] a = {};
+            System.out.println(maks(a,1,2));
 
     } // main
 
