@@ -3,30 +3,30 @@ Oversikt over temaene:
 1: Grunnleggende begreper og teknikker
 
 
-1.1 Algoritmer og effektvivitet
+. 1.1 Algoritmer og effektvivitet
 
-1.2 Nest største tall
+. 1.2 Nest største tall
 
-1.3 Ordnede tabeller
+. 1.3 Ordnede tabeller
 
-1.4 Generiske algoritmer
+. 1.4 Generiske algoritmer
 
-1.5 Rekursjon
+. 1.5 Rekursjon
 
-1.6 Multidimensjonelle tabeller
+. 1.6 Multidimensjonelle tabeller
 
-1.8 Algoritmeanalyse
+. 1.8 Algoritmeanalyse
 
 
 
 3: Lineære datastrukturer
 
 
-3.1 En beholder
+. 3.1 En beholder
 
-3.2 Tabellbasert liste
+. 3.2 Tabellbasert liste
 
-3.3 Lenket liste
+. 3.3 Lenket liste
 
 
 
@@ -34,13 +34,13 @@ Oversikt over temaene:
 4: Stakker og køer
 
 
-4.1 En stakk
+. 4.1 En stakk
 
-4.2 En kø
+. 4.2 En kø
 
-4.3 Toveiskø
+. 4.3 Toveiskø
 
-4.4 Prioritetskø
+. 4.4 Prioritetskø
 
 
 
@@ -48,13 +48,13 @@ Oversikt over temaene:
 5: Binære trær
 
 
-5.1 Generelle binære trær
+. 5.1 Generelle binære trær
 
-5.2 Binære søketrær
+. 5.2 Binære søketrær
 
-5.3 Minimums og makstrær
+. 5.3 Minimums og makstrær
 
-5.4 Huffmantrær
+. 5.4 Huffmantrær
 
 
 
@@ -62,7 +62,7 @@ Oversikt over temaene:
 6: Hashing og hashingteknikker
 
 
-6.1 Hashing
+. 6.1 Hashing
 
 
 
@@ -70,7 +70,7 @@ Oversikt over temaene:
 9: Balanserte binærtrær
 
 
-9.2 Rød-svart og 2-3-4 trær
+. 9.2 Rød-svart og 2-3-4 trær
 
 
 
@@ -78,7 +78,7 @@ Oversikt over temaene:
 11: Grafer
 
 
-11.1 Datastrukturer for grafer
+. 11.1 Datastrukturer for grafer
 
-11.2 Korteste vei i graf
+. 11.2 Korteste vei i graf
 
