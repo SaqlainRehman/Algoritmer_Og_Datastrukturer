@@ -42,15 +42,45 @@ public class Tabell {
         }
     }
 
+    public static int[] nestMaks(int[] a)  // legges i class Tabell
+    {
+        int n = a.length;   // tabellens lengde
+
+        if (n < 2) throw   // må ha minst to verdier!
+                new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+
+        int m = maks(a);  // m er posisjonen til tabellens største verdi
+
+        int nm;           // nm skal inneholde posisjonen til nest største verdi
+
+        if (m == 0)                            // den største ligger først
+        {
+            nm = maks(a, 1, n);                  // leter i a[1:n>
+        }
+        else if (m == n - 1)                   // den største ligger bakerst
+        {
+            nm = maks(a, 0, n - 1);              // leter i a[0:n-1>
+        }
+        else
+        {
+            int mv = maks(a, 0, m);              // leter i a[0:m>
+            int mh = maks(a, m + 1, n);          // leter i a[m+1:n>
+            nm = a[mh] > a[mv] ? mh : mv;        // hvem er størst?
+        }
+
+
+
+
+        return new int[] {m,nm};      // m i posisjon 0 , nm i posisjon 1
+
+    } // nestMaks
+
     public static int maks(int[] a, int fra, int til)
     {
         lengdeKontroll(a);
         fratilKontroll(a.length,fra,til);
 
-        if (fra == til) {
-            throw new NoSuchElementException
-                    ("fra(" + fra + ") = til(" + til + ") - tomt tabellintervall!");
-        }
+
 
 
         int m = fra;              // indeks til største verdi i a[fra:til>
@@ -83,6 +113,7 @@ public class Tabell {
 
     public static void skriv(int[] a, int fra, int til){
 
+        fratilKontroll(a.length,fra,til);
         for (int i = fra; i < til; i++){
 
 
@@ -122,6 +153,11 @@ public class Tabell {
         if (fra > til)                                // fra er større enn til
             throw new IllegalArgumentException
                     ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
+
+        if (fra == til) {
+            throw new NoSuchElementException
+                    ("fra(" + fra + ") = til(" + til + ") - tomt tabellintervall!");
+        }
     }
 
     public static void vhKontroll(int tablengde, int v, int h) {
@@ -138,8 +174,36 @@ public class Tabell {
     }
 
     public static void lengdeKontroll(int[] a){
-        if (a.length == 0){
+        if (a == null){
             throw new IllegalArgumentException("Lengden på tabellen er null");
+        }
+    }
+
+    public static int[] nestMaks1(int[] a){
+
+        int m = maks(a);
+        bytt(a,0,m);
+
+        int nm = maks(a,1, a.length);
+
+        if (nm == m) nm = 0;
+
+        bytt(a,m,0);
+
+
+
+
+        return new int[] {m,nm};
+
+    }
+
+    public static void sortering(int[] a){
+
+        for (int i = a.length; i > 0; i--){
+
+            int m = maks(a,0,i);
+            bytt(a,m,i-1);
+
         }
     }
 
@@ -157,11 +221,14 @@ public class Tabell {
 
          */
 
-            int[] a = {1,2,3,4,5,7,8,9};
-            skrivln(a);
-            skriv(a,0,a.length);
-            skrivln(a,0,a.length);
-            skriv(a);
+            int[] a = {30,2,4,5,1,70,8,9};
+            sortering(a);
+
+            System.out.println(Arrays.toString(a));
+
+
+
+
 
     } // main
 
