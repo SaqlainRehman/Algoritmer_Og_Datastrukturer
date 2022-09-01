@@ -86,7 +86,6 @@ public class Tabell {
         for (int i = fra; i < til; i++){
 
 
-
             if (a[i] == a[til-1]){
                 System.out.print(a[i]);
                 break;
@@ -103,16 +102,8 @@ public class Tabell {
 
     public static void skrivln(int[] a, int fra, int til){
 
-        for (int i = fra; i < til; i++){
-
-
-
-            if (a[i] == a[til-1]){
-                System.out.print(a[i] + "\n");
-                break;
-            }
-            System.out.print(a[i] + " ");
-        }
+       skriv(a,0,a.length);
+        System.out.println();
     }
 
     public static void skrivln(int[] a){
@@ -166,8 +157,11 @@ public class Tabell {
 
          */
 
-            int[] a = {};
-            System.out.println(maks(a,1,2));
+            int[] a = {1,2,3,4,5,7,8,9};
+            skrivln(a);
+            skriv(a,0,a.length);
+            skrivln(a,0,a.length);
+            skriv(a);
 
     } // main
 
