@@ -6,9 +6,37 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
+
 public class Tabell {
 
     private Tabell() {}
+
+    public static int min(int[] a, int fra, int til)
+    {
+        if (fra < 0 || til > a.length || fra >= til)
+        {
+            throw new IllegalArgumentException("Illegalt intervall!");
+        }
+
+        int m = fra;              // indeks til største verdi i a[fra:til>
+        int minverdi = a[fra];   // største verdi i a[fra:til>
+
+        for (int i = fra + 1; i < til; i++)
+        {
+            if (a[i] < minverdi)
+            {
+                m = i;                // indeks til største verdi oppdateres
+                minverdi = a[m];     // største verdi oppdateres
+            }
+        }
+
+        return m;  // posisjonen til største verdi i a[fra:til>
+    }
+
+    public static int min(int[] a)  // bruker hele tabellen
+    {
+        return min(a,0,a.length);     // kaller metoden over
+    }
 
     public static void bytt(int[] a, int i, int j)
     {
@@ -79,9 +107,6 @@ public class Tabell {
     {
         lengdeKontroll(a);
         fratilKontroll(a.length,fra,til);
-
-
-
 
         int m = fra;              // indeks til største verdi i a[fra:til>
         int maksverdi = a[fra];   // største verdi i a[fra:til>
@@ -207,6 +232,119 @@ public class Tabell {
         }
     }
 
+    public static void snu(int[] a, int v, int h)  // snur intervallet a[v:h]
+    {
+        while (v < h) bytt(a, v++, h--);
+    }
+
+    public static void snu(int[] a, int v)  // snur fra og med v og ut tabellen
+    {
+        snu(a, v, a.length - 1);
+    }
+
+    public static void snu(int[] a)  // snur hele tabellen
+    {
+        snu(a, 0, a.length - 1);
+    }
+
+    public static int lineærsøk(int[] a, int verdi) // legges i class Tabell
+    {
+        if (a.length == 0 || verdi > a[a.length-1])
+            return -(a.length + 1);  // verdi er større enn den største
+
+        int i = 0; for( ; a[i] < verdi; i++);  // siste verdi er vaktpost
+
+        return verdi == a[i] ? i : -(i + 1);   // sjekker innholdet i a[i]
+    }
+
+    public static boolean nestePermutasjon(int[] a)
+    {
+        int i = a.length - 2;                    // i starter nest bakerst
+        while (i >= 0 && a[i] > a[i + 1]) i--;   // går mot venstre
+        if (i < 0) return false;                 // a = {n, n-1, . . . , 2, 1}
+
+        int j = a.length - 1;                    // j starter bakerst
+        while (a[j] < a[i]) j--;                 // stopper når a[j] > a[i]
+        bytt(a,i,j); snu(a,i + 1);               // bytter og snur
+
+        return true;                             // en ny permutasjon
+    }
+
+    public static void utvalgssortering(int[] a)
+    {
+        for (int i = 0; i < a.length - 1; i++)
+            bytt(a, i, min(a, i, a.length));  // to hjelpemetoder
+    }
+
+    public static void utvalgssortering(int[] a, int fra, int til){
+
+        fratilKontroll(a.length,fra,til);
+        int begin = fra;
+        int end = til;
+
+        for (int i = begin; i < end; i++)
+            bytt(a, i, min(a, i, end));  // to hjelpemetoder
+
+    }
+
+    public static int binærsøk(int[] a, int fra, int til, int verdi)
+    {
+        Tabell.fratilKontroll(a.length,fra,til);  // se Programkode 1.2.3 a)
+        int v = fra, h = til - 1;  // v og h er intervallets endepunkter
+
+        while (v <= h)    // fortsetter så lenge som a[v:h] ikke er tom
+        {
+            int m = (v + h)/2;      // heltallsdivisjon - finner midten
+            int midtverdi = a[m];   // hjelpevariabel for midtverdien
+
+            if (verdi == midtverdi) return m;          // funnet
+            else if (verdi > midtverdi) v = m + 1;     // verdi i a[m+1:h]
+            else  h = m - 1;                           // verdi i a[v:m-1]
+        }
+
+        return -(v + 1);    // ikke funnet, v er relativt innsettingspunkt
+    }
+
+    public static int binærsøk(int[] a, int verdi)  // søker i hele a
+    {
+        return binærsøk(a, 0, a.length, verdi);  // bruker metoden over
+    }
+
+    public static int binærsøk2(int[] a, int fra, int til, int verdi)
+    {
+        Tabell.fratilKontroll(a.length,fra,til);  // se Programkode 1.2.3 a)
+        int v = fra, h = til - 1;    // v og h er intervallets endepunkter
+
+        while (v <= h)  // fortsetter så lenge som a[v:h] ikke er tom
+        {
+            int m = (v + h)/2;     // heltallsdivisjon - finner midten
+            int midtverdi = a[m];  // hjelpevariabel for  midtverdien
+
+            if (verdi > midtverdi) v = m + 1;        // verdi i a[m+1:h]
+            else if (verdi < midtverdi) h = m - 1;   // verdi i a[v:m-1]
+            else return m;                           // funnet
+        }
+
+        return -(v + 1);   // ikke funnet, v er relativt innsettingspunkt
+    }
+
+    public static int binærsøk3(int[] a, int fra, int til, int verdi)
+    {
+        Tabell.fratilKontroll(a.length,fra,til);  // se Programkode 1.2.3 a)
+        int v = fra, h = til - 1;  // v og h er intervallets endepunkter
+
+        while (v < h)  // obs. må ha v < h her og ikke v <= h
+        {
+            int m = (v + h)/2;  // heltallsdivisjon - finner midten
+
+            if (verdi > a[m]) v = m + 1;   // verdi må ligge i a[m+1:h]
+            else  h = m;                   // verdi må ligge i a[v:m]
+        }
+        if (h < v || verdi < a[v]) return -(v + 1);  // ikke funnet
+        else if (verdi == a[v]) return v;            // funnet
+        else  return -(v + 2);                       // ikke funnet
+    }
+
 
 
 
@@ -221,16 +359,22 @@ public class Tabell {
 
          */
 
-            int[] a = {30,2,4,5,1,70,8,9};
+            int[] a = {5,6,7,4,3,2,1};
             sortering(a);
 
-            System.out.println(Arrays.toString(a));
 
 
 
 
 
-    } // main
+
+
+
+
+
+
+
+        } // main
 
 
 
