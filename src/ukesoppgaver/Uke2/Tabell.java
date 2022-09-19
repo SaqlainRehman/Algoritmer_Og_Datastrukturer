@@ -345,10 +345,69 @@ public class Tabell {
         else  return -(v + 2);                       // ikke funnet
     }
 
+    public static int maks(double[] a)     // legges i class Tabell
+    {
+        int m = 0;                           // indeks til største verdi
+        double maksverdi = a[0];             // største verdi
+
+        for (int i = 1; i < a.length; i++) if (a[i] > maksverdi)
+        {
+            maksverdi = a[i];     // største verdi oppdateres
+            m = i;                // indeks til største verdi oppdaters
+        }
+        return m;     // returnerer posisjonen til største verdi
+    }
+
+    public static int maks(String[] a)    // legges i class Tabell
+    {
+        int m = 0;                          // indeks til største verdi
+        String maksverdi = a[0];            // største verdi
+
+        for (int i = 1; i < a.length; i++) if (a[i].compareTo(maksverdi) < 0)
+        {
+            maksverdi = a[i];  // største verdi oppdateres
+            m = i;             // indeks til største verdi oppdaters
+        }
+        return m;  // returnerer posisjonen til største verdi
+    }
+
+    public static int maks(char[] a)     // legges i class Tabell
+    {
+        int m = 0;                           // indeks til største verdi
+        char maksverdi = a[0];             // største verdi
+
+        for (int i = 1; i < a.length; i++) if (a[i] > maksverdi)
+        {
+            maksverdi = a[i];     // største verdi oppdateres
+            m = i;                // indeks til største verdi oppdaters
+        }
+        return m;     // returnerer posisjonen til største verdi
+    }
+
+    public static int maks(Integer[] a)     // legges i class Tabell
+    {
+        int m = 0;                           // indeks til største verdi
+        Integer maksverdi = a[0];             // største verdi
+
+        for (int i = 1; i < a.length; i++) if (a[i] > maksverdi)
+        {
+            maksverdi = a[i];     // største verdi oppdateres
+            m = i;                // indeks til største verdi oppdaters
+        }
+        return m;     // returnerer posisjonen til største verdi
+    }
+
+    public static int compara(boolean x,boolean y){
+
+        return Boolean.compare(x, y);
+
+    }
 
 
 
-        public static void main(String[]  args){      // hovedprogram
+
+
+    public static void main(String[]  args){      // hovedprogram
         /*
             int[] a = Tabell.randPerm(20);              // en tilfeldig tabell
             for (int k : a) System.out.print(k + " ");  // skriver ut a
@@ -357,21 +416,26 @@ public class Tabell {
 
             System.out.println("\nStørste verdi ligger på plass " + m);
 
+
+
+            int[] a = {5,2,7,3,9,1,8,4,6};
+            Integer[] i = {5,2,7,3,9,1,8,4,6};
+            double[] d = {5.7,3.14,7.12,3.9,6.5,7.1,7.11};
+            String[] s = {"Sohil","Per","Thanh","Fatima","Kari","Jasmin"};
+            char[] c = "JASMIN".toCharArray();
+
+            int k = Tabell.maks(a);     // posisjonen til den største i a
+            int l = Tabell.maks(d);     // posisjonen til den største i d
+            int m = Tabell.maks(s);     // posisjonen til den største i s
+            int n = Tabell.maks(c);     // posisjonen til den største i c
+            int o = Tabell.maks(i);     // posisjonen til den største i c
+
+            System.out.println(a[k] + "  " + d[l] + "  " + s[m] + " " + n + " " + o);
+
          */
 
-            int[] a = {5,6,7,4,3,2,1};
-            sortering(a);
 
-
-
-
-
-
-
-
-
-
-
+        System.out.println(compara(true,true));
 
 
         } // main

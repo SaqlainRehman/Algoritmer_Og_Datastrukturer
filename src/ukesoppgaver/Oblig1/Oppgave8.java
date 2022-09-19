@@ -43,7 +43,7 @@ public class Oppgave8 {
 
     public static void main(String[] args) {
 
-        int[] a = {1,2,9,3,8,5,4,7,1};
+        int[] a = {1,2,9,3,8,5,4,7};
         System.out.println(Arrays.toString(indekssortering(a)));
 
     }

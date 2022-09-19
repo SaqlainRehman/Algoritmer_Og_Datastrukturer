@@ -11,7 +11,7 @@ public class Oppgave6 {
         int n = a.length;
         if (n < 2) return;                                     // tomt eller en verdi
 
-        if ((k %= n) < 0) k += n;                              // motsatt vei?
+        if ((k %= n) < 0) k += n;                              // gjør at det kan gjøre så mange rotasjoner som mulig
 
         for (int v = 0, h = n - 1; v < h; Tabell.bytt(a, v++, h--));// snur a[a:n>
         for (int v = 0, h = k - 1; v < h; Tabell.bytt(a, v++, h--));  // snur a[0:d>

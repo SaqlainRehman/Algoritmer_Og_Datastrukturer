@@ -11,11 +11,7 @@ public class Test {
 
     }
 
-    public static int simpleIntervalCheck(int x){
 
-        return (x < 0) ? -1 : 1;
-
-    }
 
 
 }
